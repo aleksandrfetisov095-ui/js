@@ -1,0 +1,89 @@
+// ДЗ - 1
+// Задание 6
+// const EURO = 0.92;
+// let dollars = prompt("Введите сумму долларов");
+// let eur = dollars * EURO;
+// alert(`${dollars} долларов = ${eur.toFixed(2)} евро`);
+// задание 7
+// let flashGB = prompt("Объем флешки в ГБ:");
+// let fileMB = prompt("Размер одного файла в МБ:");
+
+// let flashSizeMB = flashGB * 1024;
+
+// let countFiles = Math.floor(flashSizeMB / fileMB);
+
+// alert(`На флешку поместится ${countFiles} файлов`);
+// задание 8
+// let money = prompt("Сумма денег в кошельке:");
+// let chocolatePrice = prompt("Цена одной шоколадки:");
+
+// let count = Math.floor(money / chocolatePrice); 
+// let change = money - (count * chocolatePrice);
+
+// alert(`Можно купить ${count} шоколадок. Сдача: ${change.toFixed(2)} руб.`);
+// задание 13
+// let number = prompt("Введите трёхзначное число");
+
+// let secondDigit = Math.floor((number % 100) / 10);
+
+// alert(`Вторая цифра числа ${number}: ${secondDigit}`);
+// задание 14
+// let sales = prompt("Общая сумма продаж за месяц:");
+
+// let baseSalary = 30000;
+// let bonus = sales * 0.12;
+// let totalSalary = baseSalary + bonus;
+
+// alert(`Зарплата: ${totalSalary.toFixed(2)} руб. Оклад: ${baseSalary}, бонус: ${bonus.toFixed(2)})`);
+// задание 18
+// let totalSeconds = prompt("Введите количество секунд:");
+
+// let hours = Math.floor(totalSeconds / 3600);
+// let minutes = Math.floor((totalSeconds % 3600) / 60);
+// let seconds = totalSeconds % 60;                       
+
+// alert(`ЧЧ:ММ:СС -> ${hours}:${minutes}:${seconds}`);
+// 2 ФАЙЛ ДЗ 
+// задание 6
+// let number = prompt("Введите пятизначное число:");
+
+// let lastDigit = number.slice(-1);
+// let rest = number.slice(0, -1);
+// let result = lastDigit + rest;
+
+// alert(`Было: ${number}\nСтало: ${result}`);
+// задание 7
+// let names = "Анна";
+// let surname = "Сидорова";
+// let profession = "дизайнер";
+
+// let message = `Меня зовут ${names} ${surname}, моя профессия - ${profession}`;
+// console.log(message);
+// // задание 8
+// let str1 = prompt("Введите первую строку:");
+// let str2 = prompt("Введите вторую строку:");
+
+// let len1 = str1.length;
+// let len2 = str2.length;
+
+// let diff = Math.abs(len1 - len2);
+
+// alert(`Длина первой строки: ${len1}. Длина второй строки: ${len2} Разница: ${diff} символов`);
+// задание 10 
+// let num = prompt("Введите число от 0 до 9:");
+
+// const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "("];
+
+// let symbol = symbols[num - 1];
+
+// alert(`Вы выбрали клавишу ${num} это спецсимвол: ${symbol}`);
+// задание 11
+let text = prompt("Введите текст:");
+let starsCount = Math.floor(Math.random() * 5) + 1;
+
+let stars = "*".repeat(starsCount);
+
+let result = stars + text + stars;
+
+alert(`Загаданное число: ${starsCount} Результат: ${result}`);
+
