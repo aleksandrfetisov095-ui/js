@@ -32,7 +32,7 @@ function meanScore(...numbers) {
     }
 
     let average = sum / numbers.length;
-    return parseFloat(average.toFixed(2));
+    return parseFloat(average);
 }
 
 console.log(meanScore(10, 20, 30));
