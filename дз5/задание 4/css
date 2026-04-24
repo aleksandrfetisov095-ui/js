@@ -1,0 +1,21 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    padding: 20px;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.block {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
