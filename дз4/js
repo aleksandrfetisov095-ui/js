@@ -1,0 +1,111 @@
+// задание 8
+function rand(min,max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let myNumbers = [5, 7, 3, 1, 2];
+function unik(mass) {
+    let newname;
+    do {
+        newname = rand(1,10);
+    } while (mass.includes(newname));
+    mass.push(newname);
+    return mass
+}
+console.log(myNumbers);
+unik(myNumbers);
+console.log(myNumbers);
+// задание 14
+function pushIfUnique(inputArray, newElement){
+    if(inputArray.includes(newElement)){
+        console.log(`${newElement} уже находится в массиве`);
+    }
+    else(
+        inputArray.push(newElement)
+    )
+}
+const myNumbers = [123, 50, 27];
+
+pushIfUnique(myNumbers, 50);    
+console.log(myNumbers);       
+
+pushIfUnique(myNumbers, 80);
+console.log(myNumbers);     
+
+pushIfUnique(myNumbers, 80);   
+console.log(myNumbers);         
+
+pushIfUnique(myNumbers, 77);
+console.log(myNumbers);
+// задание 28
+function text(num) {
+    if (num < 10 || num > 99) {
+        return "Error";
+    }
+
+    const units = ["", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"];
+    const teens = ["десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", 
+                   "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"];
+    const tens = ["", "", "двадцать", "тридцать", "сорок", "пятьдесят", 
+                  "шестьдесят", "семьдесят", "восемьдесят", "девяносто"];
+
+    let result = "";
+
+    if (num >= 10 && num <= 19) {
+        result = teens[num - 10];
+    } else {
+        let ten = Math.floor(num / 10);
+        let unit = num % 10;                 
+
+        result = tens[ten];
+        if (unit !== 0) {
+            result += " " + units[unit];
+        }
+    }
+
+    return result.charAt(0).toUpperCase() + result.slice(1);
+}
+
+console.log(text(15));
+console.log(text(55));  
+// задание 32
+function Spam(text) {
+    let lowerText = text.toLowerCase();
+
+    const spamWords = [
+        "100%",
+        "бесплатно",
+        "увеличение продаж",
+        "только сегодня",
+        "не удаляйте"
+    ];
+
+    for (let word of spamWords) {
+        if (lowerText.includes(word.toLowerCase())) {
+            return true; 
+        }
+    }
+
+    return false;
+}
+console.log(Spam("Купите сейчас! Только сегодня скидка 100%!"));
+console.log(Spam("Просто хорошее предложение")); 
+// // задание 36
+function longestWord(slov) {
+    let words = slov.split(" ");
+
+    let longest = "";
+
+    for (let word of words) {
+        let cleanWord = word.replace(/[.,!?;:'"]/g, "");
+
+        if (cleanWord.length > longest.length) {
+            longest = cleanWord;
+        }
+    }
+
+    return longest;
+}
+
+console.log(longestWord("Hello world"));    
+console.log(longestWord("JavaScript language"));
+
