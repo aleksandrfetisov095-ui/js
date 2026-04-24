@@ -1,0 +1,12 @@
+const cells = document.querySelectorAll('#myTable td');
+cells.forEach(function(cell) {
+    const originalBg = cell.style.backgroundColor || 'white';
+
+    cell.addEventListener('mouseover', function() {
+        this.style.backgroundColor = 'green';
+    });
+
+    cell.addEventListener('mouseout', function() {
+        this.style.backgroundColor = originalBg; 
+        });
+});
