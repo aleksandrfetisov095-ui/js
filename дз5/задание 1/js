@@ -1,0 +1,26 @@
+const area = document.getElementById('area');
+const coordsSpan = document.getElementById('coords');
+const clickInfoSpan = document.getElementById('clickInfo');
+
+area.addEventListener('mousemove', function(event) {
+    coordsSpan.textContent = `X: ${event.clientX}, Y: ${event.clientY}`;
+});
+
+area.addEventListener('mousedown', function(event) {
+    let buttonName = '';
+    if (event.button === 0) {
+        buttonName = 'Левая кнопка';
+    } else if (event.button === 2) {
+        buttonName = 'Правая кнопка';
+    }
+        
+    clickInfoSpan.textContent = `Нажата: ${buttonName}`;
+        
+    if (event.button === 2) {
+        event.preventDefault();
+    }
+});
+
+area.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
