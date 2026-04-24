@@ -1,0 +1,38 @@
+let names = prompt("Введите имена через запятую (например: Иван, Маша, Петя):");
+let participants = names.split(',');
+
+for (let i = 0; i < participants.length; i++) {
+    participants[i] = participants[i].trim(); // убирает пробелы
+}
+let resultDiv = document.getElementById('result');
+let listDiv = document.getElementById('list');
+let btn = document.getElementById('btn');
+
+function showList() {
+    listDiv.textContent = "Остались: " + participants.join(', ');
+}
+
+showList();
+
+btn.addEventListener('click', function() {
+    
+    if (participants.length === 0) {
+        resultDiv.textContent = "Все уже сыграли! Игра окончена.";
+        btn.disabled = true; 
+        return; 
+    }
+
+    let randomIndex = Math.floor(Math.random() * participants.length);
+
+    let chosenName = participants[randomIndex];
+    participants.splice(randomIndex, 1);
+
+    resultDiv.textContent = " Выпал: " + chosenName + "!";
+
+    showList();
+
+    if (participants.length === 0) {
+        btn.textContent = "Игра окончена";
+        btn.disabled = true;
+    }
+});
