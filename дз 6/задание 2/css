@@ -1,0 +1,28 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    margin: 20px; }
+
+.gallery-container {
+    text-align: center;
+}
+
+#mainImage {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black; 
+    display: block;
+    margin: 0 auto 15px auto; 
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
