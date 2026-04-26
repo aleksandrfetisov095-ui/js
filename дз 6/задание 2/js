@@ -1,0 +1,46 @@
+const images = [
+    "imgphoto/images.jfif",             
+    "imgphoto/istockphoto-2165337331-612x612.jpg",
+    "imgphoto/wr-960.webp"               
+];
+
+let currentIndex = 0;
+
+const imgElement = document.getElementById('mainImage');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const counterSpan = document.getElementById('counter');
+
+function updateGallery() {
+    imgElement.src = images[currentIndex];
+        counterSpan.textContent = `${currentIndex + 1} / ${images.length}`;
+
+    if (currentIndex === 0) {
+        prevBtn.disabled = true;
+    } else {
+        prevBtn.disabled = false;
+    }
+
+    if (currentIndex === images.length - 1) {
+        nextBtn.disabled = true;
+    } else {
+        nextBtn.disabled = false;
+    }
+}
+
+nextBtn.addEventListener('click', function() {
+
+    if (currentIndex < images.length - 1) {
+        currentIndex++; 
+        updateGallery();
+    }
+});
+
+prevBtn.addEventListener('click', function() {
+    if (currentIndex > 0) {
+        currentIndex--; 
+        updateGallery();
+    }
+});
+
+updateGallery();
